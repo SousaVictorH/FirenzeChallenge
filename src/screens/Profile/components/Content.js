@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
   },
   leftView: {
     width: '50%',
-    paddingTop: 120,
+    paddingTop: 85,
     paddingLeft: 35,
   },
   rightView: {
     width: '50%',
-    paddingTop: 90,
+    paddingTop: 55,
   },
   commentContainer: {
     flex: 1,

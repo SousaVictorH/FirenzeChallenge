@@ -72,8 +72,8 @@ export default Content;
 
 const styles = StyleSheet.create({
   iconContainer: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 500,

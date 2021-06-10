@@ -25,21 +25,22 @@ const styles = StyleSheet.create({
   },
   name: {
     color: black,
-    fontSize: 38,
+    fontSize: 27,
     fontWeight: '700',
-    maxWidth: 180,
+    maxWidth: 140,
   },
   contact: {
     color: purple,
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: '700',
     marginTop: 8,
+    maxWidth: 140,
   },
   city: {
     color: black,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '300',
-    maxWidth: 150,
+    maxWidth: 140,
     marginTop: 6,
   },
 });

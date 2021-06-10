@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import BaseButton from './BaseButton';
 import ImageIcon from '../layouts/ImageIcon';
 
-import {purple, white} from '../../resources/colors';
+import {darkPurple, white} from '../../resources/colors';
 
 const SimpleButton = ({
   style,
@@ -14,9 +14,9 @@ const SimpleButton = ({
   iconName,
   color = white,
   title,
-  iconSize = 32,
+  iconSize = 25,
   textStyle,
-  backgroundColor = purple,
+  backgroundColor = darkPurple,
   onPress,
 }) => {
   return (
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
     marginRight: 17,
     width: '88%',
-    height: 48,
+    height: 40,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',

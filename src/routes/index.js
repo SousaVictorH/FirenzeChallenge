@@ -1,7 +1,7 @@
 import React from 'react';
 
-import DrawerNavigation from './drawerNavigation';
+import TabNavigator from './TabNavigator';
 
 export default function Routes() {
-  return <DrawerNavigation />;
+  return <TabNavigator />;
 }

@@ -11,7 +11,7 @@ export default function Avatars({uri, style, verified}) {
     <View style={[styles.container, style || {}]}>
       <ImageBackground source={uri} style={styles.image} />
       {verified && (
-        <ImageIcon icon={utils.verified.icon} style={styles.icon} height={50} />
+        <ImageIcon icon={utils.verified.icon} style={styles.icon} height={34} />
       )}
     </View>
   );
@@ -19,8 +19,8 @@ export default function Avatars({uri, style, verified}) {
 
 const styles = StyleSheet.create({
   container: {
-    width: 180,
-    height: 180,
+    width: 140,
+    height: 140,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 500,
@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
   },
   image: {
     resizeMode: 'center',
-    height: 160,
-    width: 160,
+    height: 120,
+    width: 120,
   },
   icon: {
     position: 'absolute',
-    right: -60,
-    top: 110,
+    right: -40,
+    top: 85,
   },
 });
