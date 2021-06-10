@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import BaseButton from './BaseButton';
 import ImageIcon from '../layouts/ImageIcon';

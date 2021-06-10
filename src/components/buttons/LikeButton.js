@@ -10,7 +10,11 @@ import {transparent, black, red} from '../../resources/colors';
 const SimpleButton = ({onPress, style, liked}) => {
   return (
     <BaseButton onPress={onPress} style={[styles.container, style]}>
-      <Icon name={'heart'} color={liked ? red : black} size={45} />
+      <Icon
+        name={liked ? 'heart' : 'heart-o'}
+        color={liked ? red : black}
+        size={45}
+      />
     </BaseButton>
   );
 };

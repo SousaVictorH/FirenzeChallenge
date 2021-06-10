@@ -8,7 +8,10 @@ import AltIcon from 'react-native-vector-icons/Entypo';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 
-import HomeScreen from '../screens/Profile';
+import HomeScreen from '../screens/Home';
+import SearchScreen from '../screens/Search';
+import TrophiesScreen from '../screens/Trophies';
+import ProfileScreen from '../screens/Profile';
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
@@ -23,7 +26,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       },
     },
     Search: {
-      screen: HomeScreen,
+      screen: SearchScreen,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
           <View>
@@ -32,8 +35,8 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
       },
     },
-    Trophy: {
-      screen: HomeScreen,
+    Trophies: {
+      screen: TrophiesScreen,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
           <View>
@@ -43,7 +46,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       },
     },
     Profile: {
-      screen: HomeScreen,
+      screen: ProfileScreen,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
           <View>

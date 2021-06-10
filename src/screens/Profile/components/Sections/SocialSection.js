@@ -25,6 +25,13 @@ const Content = ({number}) => {
     setIsFriend(!isFriend);
   };
 
+  const showLikes = () => {
+    console.log('SHOW LIKES!');
+  };
+  const showFriends = () => {
+    console.log('SHOW FRIENDS!');
+  };
+
   const goToWhatsApp = async () => {
     try {
       // Try App
@@ -47,11 +54,11 @@ const Content = ({number}) => {
         <LikeButton liked={liked} onPress={toggleLike} />
       </View>
       <View style={styles.inLine}>
-        <SimpleButton number={236} title={LIKES} />
-        <SimpleButton number={550} title={FRIENDS} />
+        <SimpleButton onPress={showLikes} number={236} title={LIKES} />
+        <SimpleButton onPress={showFriends} number={550} title={FRIENDS} />
       </View>
       <Button
-        iconName={isFriend ? null : 'user'}
+        iconName={isFriend ? null : 'people'}
         title={isFriend ? UNFOLLOW : ADD_AMIGO}
         onPress={toggleIsFriend}
       />
