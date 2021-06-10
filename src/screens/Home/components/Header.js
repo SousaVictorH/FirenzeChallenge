@@ -6,7 +6,7 @@ import {images} from '../../../resources/images';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Image source={images.londonS.path} style={styles.image} />
+      <Image source={images.london.path} style={styles.image} />
     </View>
   );
 };

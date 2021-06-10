@@ -4,13 +4,13 @@ import {StyleSheet, View} from 'react-native';
 import {white} from '../../resources/colors';
 
 import Header from './components/Header';
-import Profile from './components/Profile';
+import Content from './components/Content';
 
 const Home = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <Profile />
+      <Content />
     </View>
   );
 };

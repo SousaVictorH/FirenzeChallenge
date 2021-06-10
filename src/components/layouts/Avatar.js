@@ -1,29 +1,45 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {View, StyleSheet, ImageBackground} from 'react-native';
 
 import {white} from '../../resources/colors';
+import {utils} from '../../resources/icons';
 
-export default function Avatars({uri, style}) {
+import ImageIcon from '../../components/layouts/ImageIcon';
+
+export default function Avatars({uri, style, verified}) {
   return (
     <View style={[styles.container, style || {}]}>
-      <Image source={uri} style={styles.image} />
+      <ImageBackground source={uri} style={styles.image} />
+      {verified && (
+        <ImageIcon
+          icon={utils.verified.icon}
+          style={styles.icon}
+          _height={50}
+        />
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
-    maxWidth: 180,
-    maxHeight: 180,
+    width: 180,
+    height: 180,
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
     borderRadius: 500,
     borderWidth: 10,
     borderColor: white,
+    position: 'relative',
   },
   image: {
-    resizeMode: 'cover',
+    resizeMode: 'center',
+    height: 160,
+    width: 160,
+  },
+  icon: {
+    position: 'absolute',
+    right: -60,
+    top: 110,
   },
 });

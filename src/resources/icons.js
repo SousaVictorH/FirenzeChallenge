@@ -20,6 +20,18 @@ const utils = {
   ['whatsapp']: {
     icon: require('../assets/icons/utils/whatsapp.png'),
   },
+  ['verified']: {
+    icon: require('../assets/icons/utils/verified.png'),
+  },
+  ['like']: {
+    icon: require('../assets/icons/utils/like.png'),
+  },
+  ['quotMarks']: {
+    icon: require('../assets/icons/utils/aspas.jpg'),
+  },
+  ['invertQuotMarks']: {
+    icon: require('../assets/icons/utils/aspas-invertidas.jpg'),
+  },
 };
 
 export {womans, mans, utils};
