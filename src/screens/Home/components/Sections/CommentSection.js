@@ -9,9 +9,9 @@ import {black} from '../../../../resources/colors';
 const Content = ({comment}) => {
   return (
     <View style={styles.container}>
-      <ImageIcon icon={utils.quotMarks.icon} _height={26} _width={26} />
+      <ImageIcon icon={utils.quotMarks.icon} height={26} width={26} />
       <Text style={styles.comment}>{comment}</Text>
-      <ImageIcon icon={utils.invertQuotMarks.icon} _height={26} _width={26} />
+      <ImageIcon icon={utils.invertQuotMarks.icon} height={26} width={26} />
     </View>
   );
 };

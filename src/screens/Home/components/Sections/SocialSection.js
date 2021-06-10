@@ -1,31 +1,68 @@
-import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 
-import ImageIcon from '../../../../components/layouts/ImageIcon';
+import {openURL} from '../../../../interfaces/navigation';
+
+import LikeButton from '../../../../components/buttons/LikeButton';
 import SimpleButton from '../../../../components/buttons/SimpleButton';
 import Button from '../../../../components/buttons/Button';
 
+import {WHATSAPP, generateAppLink} from '../../../../constants/links';
+
 import {black, white} from '../../../../resources/colors';
+import {ADD_AMIGO, FRIENDS, LIKES, UNFOLLOW} from '../../../../constants/texts';
+
 import {utils} from '../../../../resources/icons';
 
-const Content = () => {
+const Content = ({number}) => {
+  const [liked, setLiked] = useState(false);
+  const [isFriend, setIsFriend] = useState(false);
+
+  const toggleLike = () => {
+    setLiked(!liked);
+  };
+  const toggleIsFriend = () => {
+    setIsFriend(!isFriend);
+  };
+
+  const goToWhatsApp = async () => {
+    try {
+      // Try App
+      const link = generateAppLink(number);
+
+      const response = await openURL(link);
+
+      if (response.err) {
+        throw response.err;
+      }
+    } catch (error) {
+      // No App
+      openURL(WHATSAPP);
+    }
+  };
+
   return (
     <>
       <View style={styles.iconContainer}>
-        <ImageIcon style={styles.like} icon={utils.like.icon} />
+        <LikeButton liked={liked} onPress={toggleLike} />
       </View>
       <View style={styles.inLine}>
-        <SimpleButton number={236} title={'Likes'} />
-        <SimpleButton number={550} title={'Amigos'} />
+        <SimpleButton number={236} title={LIKES} />
+        <SimpleButton number={550} title={FRIENDS} />
       </View>
-      <Button icon={utils.whatsapp.icon} title={'Add Amigo'} />
+      <Button
+        iconName={isFriend ? null : 'user'}
+        title={isFriend ? UNFOLLOW : ADD_AMIGO}
+        onPress={toggleIsFriend}
+      />
       <Button
         backgroundColor={white}
         icon={utils.whatsapp.icon}
-        title={'99 99999-9999'}
+        title={number}
         textStyle={styles.text}
         iconSize={24}
         style={styles.button}
+        onPress={goToWhatsApp}
       />
     </>
   );
@@ -41,6 +78,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 500,
     backgroundColor: white,
+    borderWidth: 0.9,
 
     position: 'absolute',
     top: -45,

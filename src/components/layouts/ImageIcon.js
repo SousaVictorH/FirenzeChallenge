@@ -4,8 +4,8 @@ import {Image} from 'react-native';
 const ImageIcon = ({
   icon,
   uri,
-  _height = '100%',
-  _width = '100%',
+  height = '100%',
+  width = '100%',
   resizeMode = 'contain',
   alignSelf = 'center',
   style,
@@ -13,7 +13,7 @@ const ImageIcon = ({
   return (
     <Image
       source={icon || {uri}}
-      style={[{height: _height, width: _width, resizeMode, alignSelf}, style]}
+      style={[{height, width, resizeMode, alignSelf}, style]}
     />
   );
 };

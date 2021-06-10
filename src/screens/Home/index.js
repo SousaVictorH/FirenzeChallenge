@@ -3,14 +3,16 @@ import {StyleSheet, View} from 'react-native';
 
 import {white} from '../../resources/colors';
 
+import user from '../../interfaces/data.json';
+
 import Header from './components/Header';
 import Content from './components/Content';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header />
-      <Content />
+      <Content navigation={navigation} user={user} />
     </View>
   );
 };

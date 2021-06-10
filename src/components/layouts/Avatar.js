@@ -11,11 +11,7 @@ export default function Avatars({uri, style, verified}) {
     <View style={[styles.container, style || {}]}>
       <ImageBackground source={uri} style={styles.image} />
       {verified && (
-        <ImageIcon
-          icon={utils.verified.icon}
-          style={styles.icon}
-          _height={50}
-        />
+        <ImageIcon icon={utils.verified.icon} style={styles.icon} height={50} />
       )}
     </View>
   );

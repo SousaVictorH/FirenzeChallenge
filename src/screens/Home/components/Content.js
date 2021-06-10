@@ -9,24 +9,24 @@ import {white} from '../../../resources/colors';
 
 import {womans} from '../../../resources/icons';
 
-const Content = () => {
+const Content = ({navigation, user}) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
         <View style={styles.leftView}>
           <ProfileSection
-            avatar={womans[0].path}
-            name={'Joana Silva'}
-            link={'@joanasilva_1'}
-            city={'Campina Grande PB, Brasil'}
+            avatar={womans[user.avatar].path}
+            name={user.name}
+            contact={user.contact}
+            city={user.city}
           />
         </View>
         <View style={styles.rightView}>
-          <SocialSection />
+          <SocialSection navigation={navigation} number={user.number} />
         </View>
       </View>
       <View style={styles.commentContainer}>
-        <CommentSection comment={'Especialista em comerciais de moda'} />
+        <CommentSection comment={user.comment} />
       </View>
     </View>
   );
