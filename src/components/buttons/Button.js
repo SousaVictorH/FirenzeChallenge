@@ -4,7 +4,7 @@ import {Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import BaseButton from './BaseButton';
-import ImageIcon from '../layouts/ImageIcon';
+import ImageIcon from '../icons/ImageIcon';
 
 import {darkPurple, white} from '../../resources/colors';
 

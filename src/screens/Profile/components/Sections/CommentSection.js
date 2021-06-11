@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import ImageIcon from '../../../../components/layouts/ImageIcon';
+import ImageIcon from '../../../../components/icons/ImageIcon';
 
 import {utils} from '../../../../resources/icons';
 import {black} from '../../../../resources/colors';
 
-const Content = ({comment}) => {
+const CommentSection = ({comment}) => {
   return (
     <View style={styles.container}>
       <ImageIcon icon={utils.quotMarks.icon} height={18} width={18} />
@@ -16,7 +16,7 @@ const Content = ({comment}) => {
   );
 };
 
-export default Content;
+export default CommentSection;
 
 const styles = StyleSheet.create({
   container: {

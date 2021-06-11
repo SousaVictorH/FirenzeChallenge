@@ -4,7 +4,7 @@ import {View, StyleSheet, ImageBackground} from 'react-native';
 import {white} from '../../resources/colors';
 import {utils} from '../../resources/icons';
 
-import ImageIcon from '../../components/layouts/ImageIcon';
+import ImageIcon from '../icons/ImageIcon';
 
 export default function Avatars({uri, style, verified}) {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
 
-import BarBox from './BarBox';
+import BarBox from '../boxes/BarBox';
 
 const ScreenLayout = ({content, scroll}) => {
   const body = () => {

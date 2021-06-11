@@ -5,12 +5,13 @@ import Avatar from '../../../../components/layouts/Avatar';
 import Button from '../../../../components/buttons/BaseButton';
 
 import {black, purple} from '../../../../resources/colors';
+import {INSTAGRAM} from '../../../../constants/links';
 import {openURL} from '../../../../interfaces/navigation';
 
-const Content = ({avatar, name, contact, city}) => {
+const ProfileSection = ({avatar, name, contact, city}) => {
   const followLink = async () => {
     // Open Instagram
-    openURL('https://instagram.com').catch(() => {
+    openURL(INSTAGRAM).catch(() => {
       console.log('Verifique seu acesso à internet!');
     });
   };
@@ -27,7 +28,7 @@ const Content = ({avatar, name, contact, city}) => {
   );
 };
 
-export default Content;
+export default ProfileSection;
 
 const styles = StyleSheet.create({
   avatar: {

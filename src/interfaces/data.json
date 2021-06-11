@@ -9,11 +9,49 @@
         "number": "99 99999-9999",
         "likes": {
             "amount": 236,
-            "list": []
+            "list": [
+                {
+                    "name": "Victor",
+                    "avatar": 3
+                  },
+                  {
+                    "name": "Gustavo",
+                    "avatar": 2
+                  },
+                  {
+                    "name": "Adriana",
+                    "avatar": 1
+                  },
+                  {
+                    "name": "Priscila",
+                    "avatar": 0
+                  },
+                  {
+                    "name": "Pedro",
+                    "avatar": 2
+                  },
+                  {
+                    "name": "Arthur",
+                    "avatar": 3
+                  }
+            ]
         },
         "friends": {
             "amount": 550,
-            "list": []
+            "list": [
+              {
+                "name": "Victor",
+                "avatar": 3
+              },
+              {
+                "name": "Gustavo",
+                "avatar": 2
+              },
+              {
+                "name": "Adriana",
+                "avatar": 1
+              }
+            ]
         }
     }
 }

@@ -10,7 +10,7 @@ import HomeScreen from '../screens/Home';
 import SearchScreen from '../screens/Search';
 import TrophiesScreen from '../screens/Trophies';
 import ProfileScreen from '../screens/Profile';
-import ImageIcon from '../components/layouts/ImageIcon';
+import ImageIcon from '../components/icons/ImageIcon';
 
 import {activeColor, inactiveColor, barColor} from '../resources/colors';
 import {users} from '../resources/icons';

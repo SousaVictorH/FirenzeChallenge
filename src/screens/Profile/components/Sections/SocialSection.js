@@ -1,22 +1,23 @@
 import React, {useState} from 'react';
-import {Alert, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import {openURL} from '../../../../interfaces/navigation';
-
+import ListModal from '../../../../components/modals/ListModal';
 import LikeButton from '../../../../components/buttons/LikeButton';
 import SimpleButton from '../../../../components/buttons/SimpleButton';
 import Button from '../../../../components/buttons/Button';
 
 import {WHATSAPP, generateAppLink} from '../../../../constants/links';
-
 import {black, white} from '../../../../resources/colors';
 import {ADD_AMIGO, FRIENDS, LIKES, UNFOLLOW} from '../../../../constants/texts';
 
+import {openURL} from '../../../../interfaces/navigation';
 import {utils} from '../../../../resources/icons';
 
-const Content = ({user}) => {
+const SocialSection = ({user}) => {
   const [liked, setLiked] = useState(false);
   const [isFriend, setIsFriend] = useState(false);
+  const [showLikes, setShowLikes] = useState(false);
+  const [showFriends, setShowFriends] = useState(false);
 
   const {number, likes, friends} = user;
 
@@ -26,12 +27,11 @@ const Content = ({user}) => {
   const toggleIsFriend = () => {
     setIsFriend(!isFriend);
   };
-
-  const showLikes = () => {
-    console.log(likes.list);
+  const toggleShowLikes = () => {
+    setShowLikes(!showLikes);
   };
-  const showFriends = () => {
-    console.log(friends.list);
+  const toggleShowFriends = () => {
+    setShowFriends(!showFriends);
   };
 
   const goToWhatsApp = async () => {
@@ -51,13 +51,29 @@ const Content = ({user}) => {
 
   return (
     <>
+      <ListModal
+        onExit={toggleShowLikes}
+        title={LIKES}
+        data={likes.list}
+        isVisible={showLikes}
+      />
+      <ListModal
+        onExit={toggleShowFriends}
+        title={FRIENDS}
+        data={friends.list}
+        isVisible={showFriends}
+      />
       <View style={styles.iconContainer}>
         <LikeButton liked={liked} onPress={toggleLike} />
       </View>
       <View style={styles.inLine}>
-        <SimpleButton onPress={showLikes} number={likes.amount} title={LIKES} />
         <SimpleButton
-          onPress={showFriends}
+          onPress={toggleShowLikes}
+          number={likes.amount}
+          title={LIKES}
+        />
+        <SimpleButton
+          onPress={toggleShowFriends}
           number={friends.amount}
           title={FRIENDS}
         />
@@ -80,7 +96,7 @@ const Content = ({user}) => {
   );
 };
 
-export default Content;
+export default SocialSection;
 
 const styles = StyleSheet.create({
   iconContainer: {
