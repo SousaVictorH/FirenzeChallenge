@@ -7,7 +7,7 @@ import CommentSection from './Sections/CommentSection';
 
 import {white} from '../../../resources/colors';
 
-import {womans} from '../../../resources/icons';
+import {users} from '../../../resources/icons';
 
 const Content = ({navigation, user}) => {
   return (
@@ -15,14 +15,14 @@ const Content = ({navigation, user}) => {
       <View style={styles.profileContainer}>
         <View style={styles.leftView}>
           <ProfileSection
-            avatar={womans[user.avatar].path}
+            avatar={users[user.avatar].path}
             name={user.name}
             contact={user.contact}
             city={user.city}
           />
         </View>
         <View style={styles.rightView}>
-          <SocialSection navigation={navigation} number={user.number} />
+          <SocialSection navigation={navigation} user={user} />
         </View>
       </View>
       <View style={styles.commentContainer}>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 
 import {openURL} from '../../../../interfaces/navigation';
 
@@ -14,9 +14,11 @@ import {ADD_AMIGO, FRIENDS, LIKES, UNFOLLOW} from '../../../../constants/texts';
 
 import {utils} from '../../../../resources/icons';
 
-const Content = ({number}) => {
+const Content = ({user}) => {
   const [liked, setLiked] = useState(false);
   const [isFriend, setIsFriend] = useState(false);
+
+  const {number, likes, friends} = user;
 
   const toggleLike = () => {
     setLiked(!liked);
@@ -26,17 +28,16 @@ const Content = ({number}) => {
   };
 
   const showLikes = () => {
-    console.log('SHOW LIKES!');
+    console.log(likes.list);
   };
   const showFriends = () => {
-    console.log('SHOW FRIENDS!');
+    console.log(friends.list);
   };
 
   const goToWhatsApp = async () => {
     try {
       // Try App
       const link = generateAppLink(number);
-
       const response = await openURL(link);
 
       if (response.err) {
@@ -54,8 +55,12 @@ const Content = ({number}) => {
         <LikeButton liked={liked} onPress={toggleLike} />
       </View>
       <View style={styles.inLine}>
-        <SimpleButton onPress={showLikes} number={236} title={LIKES} />
-        <SimpleButton onPress={showFriends} number={550} title={FRIENDS} />
+        <SimpleButton onPress={showLikes} number={likes.amount} title={LIKES} />
+        <SimpleButton
+          onPress={showFriends}
+          number={friends.amount}
+          title={FRIENDS}
+        />
       </View>
       <Button
         iconName={isFriend ? null : 'people'}
@@ -94,6 +99,7 @@ const styles = StyleSheet.create({
   inLine: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    marginRight: 10,
   },
   button: {
     alignSelf: 'flex-end',

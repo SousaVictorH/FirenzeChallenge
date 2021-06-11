@@ -8,13 +8,13 @@ import ScreenLaytout from '../../components/layouts/ScreenLayout';
 import Header from './components/Header';
 import Content from './components/Content';
 
-import user from '../../interfaces/data.json';
+import data from '../../interfaces/data.json';
 
 const Profile = ({navigation}) => {
   const renderContent = () => (
     <View style={styles.container}>
       <Header />
-      <Content navigation={navigation} user={user} />
+      <Content navigation={navigation} user={data.user} />
     </View>
   );
 

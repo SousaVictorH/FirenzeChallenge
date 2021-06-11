@@ -5,10 +5,12 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import Routes from './routes';
 
+import {transparent} from './resources/colors';
+
 const App = () => {
   return (
     <>
-      <StatusBar hidden />
+      <StatusBar backgroundColor={transparent} translucent />
       <NavigationContainer>
         <Routes />
       </NavigationContainer>

@@ -1,8 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import {activeColor, inactiveColor, barColor} from '../resources/colors';
-
 import Icon from 'react-native-vector-icons/Ionicons';
 import AltIcon from 'react-native-vector-icons/Entypo';
 import {createAppContainer} from 'react-navigation';
@@ -12,6 +10,12 @@ import HomeScreen from '../screens/Home';
 import SearchScreen from '../screens/Search';
 import TrophiesScreen from '../screens/Trophies';
 import ProfileScreen from '../screens/Profile';
+import ImageIcon from '../components/layouts/ImageIcon';
+
+import {activeColor, inactiveColor, barColor} from '../resources/colors';
+import {users} from '../resources/icons';
+
+import data from '../interfaces/data.json';
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
@@ -48,18 +52,23 @@ const TabNavigator = createMaterialBottomTabNavigator(
     Profile: {
       screen: ProfileScreen,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
+        tabBarIcon: () => (
           <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-person'} />
+            <ImageIcon
+              icon={users[data.user.avatar].path}
+              height={27}
+              width={27}
+            />
           </View>
         ),
       },
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Profile',
     activeColor,
     inactiveColor,
+    labeled: false,
     barStyle: {backgroundColor: barColor},
   },
 );

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   comment: {
     color: black,
     fontSize: 20,
-    fontWeight: '300',
+    fontWeight: '600',
     textAlign: 'center',
     letterSpacing: 0.8,
     width: 300,

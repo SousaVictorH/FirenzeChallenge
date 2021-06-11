@@ -5,10 +5,14 @@ import Avatar from '../../../../components/layouts/Avatar';
 import Button from '../../../../components/buttons/BaseButton';
 
 import {black, purple} from '../../../../resources/colors';
+import {openURL} from '../../../../interfaces/navigation';
 
 const Content = ({avatar, name, contact, city}) => {
-  const followLink = () => {
-    console.log('FOLLOW LINK!');
+  const followLink = async () => {
+    // Open Instagram
+    openURL('https://instagram.com').catch(() => {
+      console.log('Verifique seu acesso à internet!');
+    });
   };
 
   return (
@@ -29,20 +33,20 @@ const styles = StyleSheet.create({
   avatar: {
     position: 'absolute',
     top: -50,
-    left: 20,
+    left: 26,
   },
   link: {
     margin: 0,
   },
   name: {
     color: black,
-    fontSize: 27,
+    fontSize: 28,
     fontWeight: '700',
     maxWidth: 140,
   },
   contact: {
     color: purple,
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '700',
     marginTop: 8,
     maxWidth: 140,

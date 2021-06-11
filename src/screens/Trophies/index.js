@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-import {white} from '../../resources/colors';
-
 import ScreenLaytout from '../../components/layouts/ScreenLayout';
+
+import {white} from '../../resources/colors';
 
 const Trophies = ({navigation}) => {
   const renderContent = () => (
