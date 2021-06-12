@@ -4,6 +4,14 @@ import {Text, StyleSheet} from 'react-native';
 import BaseButton from './BaseButton';
 import {gray, darkGray} from '../../resources/colors';
 
+/**
+ * Esse componente serve como um botão simples contendo número e titulo
+ *
+ * @param   {Number} number               Número que será exibido
+ * @param   {String} title                Título que será exibido
+ * @param   {Function} onPress            Função que será executada ao clicar no componente
+ * @returns {React.Component}
+ */
 const SimpleButton = ({number, title, onPress}) => {
   return (
     <BaseButton onPress={() => onPress()} style={styles.container}>

@@ -10,6 +10,12 @@ import Content from './components/Content';
 
 import data from '../../interfaces/data.json';
 
+/**
+ * Esse componente exibe a tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const Profile = ({navigation}) => {
   const renderContent = () => (
     <View style={styles.container}>

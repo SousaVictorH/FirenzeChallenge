@@ -6,6 +6,12 @@ import ImageIcon from '../../../../components/icons/ImageIcon';
 import {utils} from '../../../../resources/icons';
 import {black} from '../../../../resources/colors';
 
+/**
+ * Esse componente exibe a sessão de comentários do conteúdo da tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const CommentSection = ({comment}) => {
   return (
     <View style={styles.container}>

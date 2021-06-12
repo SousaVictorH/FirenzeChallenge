@@ -7,6 +7,14 @@ import BaseButton from './BaseButton';
 
 import {transparent, black, red} from '../../resources/colors';
 
+/**
+ * Esse componente serve como um botão de like pré estilizado
+ *
+ * @param   {Function} onPress            Função que será executada ao clicar no componente
+ * @param   {Object} style                Objeto de estilização do componente
+ * @param   {Boolean} liked               Variável que indica o valor booleano do like
+ * @returns {React.Component}
+ */
 const SimpleButton = ({onPress, style, liked}) => {
   return (
     <BaseButton onPress={onPress} style={[styles.container, style]}>

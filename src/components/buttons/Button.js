@@ -8,6 +8,20 @@ import ImageIcon from '../icons/ImageIcon';
 
 import {darkPurple, white} from '../../resources/colors';
 
+/**
+ * Esse componente serve como um botão pré estilizado
+ *
+ * @param   {Object} style                Objeto de estilização do componente
+ * @param   {React.Component} icon        Componente de ícone do botão
+ * @param   {String} iconName             Nome do ícone do botão
+ * @param   {String} color                Cor do ícone
+ * @param   {String} title                Título exibido no botão
+ * @param   {Number} iconSize             Tamanho do ícone
+ * @param   {Object} textStyle            Objeto de estilo do texto
+ * @param   {String} backgroundColor      Cor de fundo do botão
+ * @param   {Function} onPress            Função que será executada ao clicar no componente
+ * @returns {React.Component}
+ */
 const SimpleButton = ({
   style,
   icon,

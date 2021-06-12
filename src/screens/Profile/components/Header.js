@@ -7,6 +7,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {gray} from '../../../resources/colors';
 import {images} from '../../../resources/images';
 
+/**
+ * Esse componente exibe o header da tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const Header = () => {
   const exitApp = () => {
     // Exit App

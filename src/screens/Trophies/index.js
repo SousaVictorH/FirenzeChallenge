@@ -5,7 +5,12 @@ import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
 import {white} from '../../resources/colors';
 
-const Trophies = ({navigation}) => {
+/**
+ * Esse componente exibe a tela de Trophies
+ *
+ * @returns {React.Component}
+ */
+const Trophies = () => {
   const renderContent = () => (
     <View style={styles.container}>
       <Text>TROPHIES</Text>

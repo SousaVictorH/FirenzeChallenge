@@ -10,6 +10,15 @@ import ListData from '../layouts/Lists/ListData';
 import {users} from '../../resources/icons';
 import {black, white, lightGray} from '../../resources/colors';
 
+/**
+ * Esse componente serve como Modal pré configurado para exibir listas
+ *
+ * @param   {String} title                Título exibido no modal
+ * @param   {Boolean} isVisible           Variável que indica visibilidade do modal
+ * @param   {Array} data                  Array de dados
+ * @param   {Function} onExit             Função executada ao fechar modal
+ * @returns {React.Component}
+ */
 const ListModal = ({title, isVisible, data = [], onExit}) => {
   const renderItem = ({item}) => {
     return (

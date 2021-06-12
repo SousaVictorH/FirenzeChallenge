@@ -9,6 +9,12 @@ import {white} from '../../../resources/colors';
 
 import {users} from '../../../resources/icons';
 
+/**
+ * Esse componente exibe o conteúdo da tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const Content = ({navigation, user}) => {
   return (
     <View style={styles.container}>

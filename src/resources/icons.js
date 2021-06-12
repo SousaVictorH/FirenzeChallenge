@@ -1,3 +1,7 @@
+/**
+ * Esse arquivo armazena todos os ícones baseados em images utilizados pelo aplicativo
+ */
+
 const users = [
   {
     path: require('../assets/icons/profile/woman1.png'),

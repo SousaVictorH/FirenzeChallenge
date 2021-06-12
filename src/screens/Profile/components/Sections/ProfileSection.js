@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, Alert} from 'react-native';
 
 import Avatar from '../../../../components/layouts/Avatar';
 import Button from '../../../../components/buttons/BaseButton';
@@ -8,11 +8,22 @@ import {black, purple} from '../../../../resources/colors';
 import {INSTAGRAM} from '../../../../constants/links';
 import {openURL} from '../../../../interfaces/navigation';
 
+/**
+ * Esse componente exibe a sessão de perfil do conteúdo da tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const ProfileSection = ({avatar, name, contact, city}) => {
+  /**
+   * Essa função seguirá o link do usuário, em caso de erro será exibido um alerta
+   */
   const followLink = async () => {
     // Open Instagram
-    openURL(INSTAGRAM).catch(() => {
-      console.log('Verifique seu acesso à internet!');
+    const link = INSTAGRAM + contact;
+
+    openURL(link).catch(() => {
+      Alert.alert('Verifique seu acesso à internet!');
     });
   };
 

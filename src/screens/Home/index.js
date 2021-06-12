@@ -5,7 +5,12 @@ import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
 import {white} from '../../resources/colors';
 
-const Home = ({navigation}) => {
+/**
+ * Esse componente exibe a tela de Home
+ *
+ * @returns {React.Component}
+ */
+const Home = () => {
   const renderContent = () => (
     <View style={styles.container}>
       <Text>HOME</Text>

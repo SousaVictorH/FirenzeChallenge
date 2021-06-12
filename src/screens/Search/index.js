@@ -5,7 +5,12 @@ import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
 import {white} from '../../resources/colors';
 
-const Search = ({navigation}) => {
+/**
+ * Esse componente exibe a tela de Search
+ *
+ * @returns {React.Component}
+ */
+const Search = () => {
   const renderContent = () => (
     <View style={styles.container}>
       <Text>SEARCH</Text>

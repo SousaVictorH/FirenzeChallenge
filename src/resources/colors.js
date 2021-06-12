@@ -1,3 +1,6 @@
+/**
+ * Esse arquivo armazena todas as cores utilizadas pelo aplicativo
+ */
 export const transparent = '#00000000';
 export const white = '#fff';
 export const black = '#000';

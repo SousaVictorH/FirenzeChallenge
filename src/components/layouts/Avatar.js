@@ -1,11 +1,19 @@
 import React from 'react';
 import {View, StyleSheet, ImageBackground} from 'react-native';
 
+import ImageIcon from '../icons/ImageIcon';
+
 import {white} from '../../resources/colors';
 import {utils} from '../../resources/icons';
 
-import ImageIcon from '../icons/ImageIcon';
-
+/**
+ * Esse componente serve como componente de Avatar básico
+ *
+ * @param   {String} uri                  Caminho da imagem avatar
+ * @param   {Object} style                Objeto de estilização do componente
+ * @param   {Boolean} verified            Variável que indica se o ususário é ou não verificado
+ * @returns {React.Component}
+ */
 export default function Avatars({uri, style, verified}) {
   return (
     <View style={[styles.container, style || {}]}>

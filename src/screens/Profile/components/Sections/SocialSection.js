@@ -13,6 +13,12 @@ import {ADD_AMIGO, FRIENDS, LIKES, UNFOLLOW} from '../../../../constants/texts';
 import {openURL} from '../../../../interfaces/navigation';
 import {utils} from '../../../../resources/icons';
 
+/**
+ * Esse componente exibe a sessão social do conteúdo da tela de Profile
+ *
+ * @param {Object} Props              Propriedades recebidas pelo componente
+ * @returns
+ */
 const SocialSection = ({user}) => {
   const [liked, setLiked] = useState(false);
   const [isFriend, setIsFriend] = useState(false);
@@ -34,6 +40,9 @@ const SocialSection = ({user}) => {
     setShowFriends(!showFriends);
   };
 
+  /**
+   * Essa função abre o whatsapp, caso o usuário não o possua instalado é aberto o link para baixar
+   */
   const goToWhatsApp = async () => {
     try {
       // Try App
