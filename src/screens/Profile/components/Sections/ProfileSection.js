@@ -1,12 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, Alert} from 'react-native';
+import {Alert, StyleSheet, Text} from 'react-native';
 
 import Avatar from '../../../../components/layouts/Avatar';
 import Button from '../../../../components/buttons/BaseButton';
 
 import {black, purple} from '../../../../resources/colors';
-import {INSTAGRAM} from '../../../../constants/links';
-import {openURL} from '../../../../interfaces/navigation';
+import {
+  generateInstagramAppLink,
+  generateInstagramLink,
+} from '../../../../constants/links';
+import {INTERNET_ERROR} from '../../../../constants/errors';
+
+import {openURI} from '../../../../interfaces/navigation';
 
 /**
  * Esse componente exibe a sessão de perfil do conteúdo da tela de Profile
@@ -16,15 +21,17 @@ import {openURL} from '../../../../interfaces/navigation';
  */
 const ProfileSection = ({avatar, name, contact, city}) => {
   /**
-   * Essa função seguirá o link do usuário, em caso de erro será exibido um alerta
+   * Essa função abre o instagram, caso o usuário não o possua instalado é aberto o link no navegador
    */
   const followLink = async () => {
-    // Open Instagram
-    const link = INSTAGRAM + contact;
+    const link = generateInstagramAppLink(contact);
+    const alternativeLink = generateInstagramLink(contact);
 
-    openURL(link).catch(() => {
-      Alert.alert('Verifique seu acesso à internet!');
-    });
+    const response = openURI(link, alternativeLink);
+
+    if (response.error) {
+      Alert.alert(INTERNET_ERROR);
+    }
   };
 
   return (

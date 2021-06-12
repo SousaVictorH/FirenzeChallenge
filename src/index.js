@@ -7,6 +7,11 @@ import Routes from './routes';
 
 import {transparent} from './resources/colors';
 
+/**
+ * Essa função Retorna o app em si
+ *
+ * @returns {React.Component}
+ */
 const App = () => {
   return (
     <>

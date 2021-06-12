@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Alert, StyleSheet, View} from 'react-native';
 
 import ListModal from '../../../../components/modals/ListModal';
 import LikeButton from '../../../../components/buttons/LikeButton';
@@ -7,10 +7,11 @@ import SimpleButton from '../../../../components/buttons/SimpleButton';
 import Button from '../../../../components/buttons/Button';
 
 import {WHATSAPP, generateAppLink} from '../../../../constants/links';
+import {INTERNET_ERROR} from '../../../../constants/errors';
 import {black, white} from '../../../../resources/colors';
 import {ADD_AMIGO, FRIENDS, LIKES, UNFOLLOW} from '../../../../constants/texts';
 
-import {openURL} from '../../../../interfaces/navigation';
+import {openURI} from '../../../../interfaces/navigation';
 import {utils} from '../../../../resources/icons';
 
 /**
@@ -44,17 +45,13 @@ const SocialSection = ({user}) => {
    * Essa função abre o whatsapp, caso o usuário não o possua instalado é aberto o link para baixar
    */
   const goToWhatsApp = async () => {
-    try {
-      // Try App
-      const link = generateAppLink(number);
-      const response = await openURL(link);
+    const link = generateAppLink(number);
+    const alternativeLink = WHATSAPP;
 
-      if (response.err) {
-        throw response.err;
-      }
-    } catch (error) {
-      // No App
-      openURL(WHATSAPP);
+    const response = await openURI(link, alternativeLink);
+
+    if (response.error) {
+      Alert.alert(INTERNET_ERROR);
     }
   };
 
