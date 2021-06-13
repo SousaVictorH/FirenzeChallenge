@@ -11,6 +11,7 @@ import {
 } from '../../../../constants/links';
 import {INTERNET_ERROR} from '../../../../constants/errors';
 
+import {formatLink} from '../../../../utils';
 import {openURI} from '../../../../interfaces/navigation';
 
 /**
@@ -24,8 +25,10 @@ const ProfileSection = ({avatar, name, contact, city}) => {
    * Essa função abre o instagram, caso o usuário não o possua instalado é aberto o link no navegador
    */
   const followLink = async () => {
-    const link = generateInstagramAppLink(contact);
-    const alternativeLink = generateInstagramLink(contact);
+    const formatedContact = formatLink(contact);
+
+    const link = generateInstagramAppLink(formatedContact);
+    const alternativeLink = generateInstagramLink(formatedContact);
 
     const response = openURI(link, alternativeLink);
 
