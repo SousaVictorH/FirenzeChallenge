@@ -22,7 +22,7 @@ import {darkPurple, white} from '../../resources/colors';
  * @param   {Function} onPress            Função que será executada ao clicar no componente
  * @returns {React.Component}
  */
-const SimpleButton = ({
+const Button = ({
   style,
   icon,
   iconName,
@@ -51,7 +51,7 @@ const SimpleButton = ({
   );
 };
 
-export default SimpleButton;
+export default Button;
 
 const styles = StyleSheet.create({
   container: {

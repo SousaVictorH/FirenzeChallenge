@@ -15,7 +15,7 @@ import ImageIcon from '../components/icons/ImageIcon';
 import {activeColor, inactiveColor, barColor} from '../resources/colors';
 import {users} from '../resources/icons';
 
-import data from '../interfaces/data.json';
+import data from '../services/data.json';
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {

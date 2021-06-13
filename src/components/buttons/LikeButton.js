@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useEffect} from 'react';
+import {StyleSheet, Animated} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -12,22 +12,43 @@ import {transparent, black, red} from '../../resources/colors';
  *
  * @param   {Function} onPress            Função que será executada ao clicar no componente
  * @param   {Object} style                Objeto de estilização do componente
- * @param   {Boolean} liked               Variável que indica o valor booleano do like
+ * @param   {Boolean} liked               Indica o valor booleano do like
+ * @param   {Number} size                 Tamanho do ícone
  * @returns {React.Component}
  */
-const SimpleButton = ({onPress, style, liked}) => {
+const LikeButton = ({onPress, style, liked, size = 45}) => {
+  const currentValue = new Animated.Value(1);
+
+  const AnimatedIcon = Animated.createAnimatedComponent(Icon);
+
+  /**
+   * Esse useEffect é executado sempre que o valor de like é alterado, animando o botão de
+   * like caso o liked seja true.
+   */
+  useEffect(() => {
+    if (liked) {
+      Animated.spring(currentValue, {
+        toValue: 1.08,
+        useNativeDriver: true,
+        friction: true,
+      }).start();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [liked]);
+
   return (
     <BaseButton onPress={onPress} style={[styles.container, style]}>
-      <Icon
+      <AnimatedIcon
         name={liked ? 'heart' : 'heart-o'}
         color={liked ? red : black}
-        size={45}
+        size={size}
+        style={{transform: [{scale: currentValue}]}}
       />
     </BaseButton>
   );
 };
 
-export default SimpleButton;
+export default LikeButton;
 
 const styles = StyleSheet.create({
   container: {

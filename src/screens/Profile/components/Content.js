@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     backgroundColor: white,
     flexDirection: 'row',
-    borderTopLeftRadius: 40,
+    borderTopLeftRadius: 25,
     marginTop: -45,
   },
   leftView: {

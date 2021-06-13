@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   avatar: {
     position: 'absolute',
     top: -50,
-    left: 26,
+    left: 22,
   },
   link: {
     margin: 0,
@@ -76,5 +76,6 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     maxWidth: 140,
     marginTop: 6,
+    fontStyle: 'italic',
   },
 });

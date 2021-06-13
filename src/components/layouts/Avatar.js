@@ -14,7 +14,7 @@ import {utils} from '../../resources/icons';
  * @param   {Boolean} verified            Variável que indica se o ususário é ou não verificado
  * @returns {React.Component}
  */
-export default function Avatars({uri, style, verified}) {
+const Avatar = ({uri, style, verified}) => {
   return (
     <View style={[styles.container, style || {}]}>
       <ImageBackground source={uri} style={styles.image} />
@@ -23,7 +23,9 @@ export default function Avatars({uri, style, verified}) {
       )}
     </View>
   );
-}
+};
+
+export default Avatar;
 
 const styles = StyleSheet.create({
   container: {

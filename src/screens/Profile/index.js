@@ -1,14 +1,13 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-
-import {white} from '../../resources/colors';
+import {View} from 'react-native';
 
 import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
 import Header from './components/Header';
 import Content from './components/Content';
 
-import data from '../../interfaces/data.json';
+import globalStyles from '../../resources/styles/globalStyles';
+import data from '../../services/data.json';
 
 /**
  * Esse componente exibe a tela de Profile
@@ -18,7 +17,7 @@ import data from '../../interfaces/data.json';
  */
 const Profile = ({navigation}) => {
   const renderContent = () => (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <Header />
       <Content navigation={navigation} user={data.user} />
     </View>
@@ -28,10 +27,3 @@ const Profile = ({navigation}) => {
 };
 
 export default Profile;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: white,
-  },
-});

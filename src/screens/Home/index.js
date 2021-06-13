@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
 import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
-import {white} from '../../resources/colors';
+import globalStyles from '../../resources/styles/globalStyles';
 
 /**
  * Esse componente exibe a tela de Home
@@ -12,8 +12,8 @@ import {white} from '../../resources/colors';
  */
 const Home = () => {
   const renderContent = () => (
-    <View style={styles.container}>
-      <Text>HOME</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.screenTitle}>HOME</Text>
     </View>
   );
 
@@ -21,12 +21,3 @@ const Home = () => {
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: white,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

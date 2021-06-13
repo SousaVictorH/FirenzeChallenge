@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
 import ScreenLaytout from '../../components/layouts/ScreenLayout';
 
-import {white} from '../../resources/colors';
+import globalStyles from '../../resources/styles/globalStyles';
 
 /**
  * Esse componente exibe a tela de Search
@@ -12,8 +12,8 @@ import {white} from '../../resources/colors';
  */
 const Search = () => {
   const renderContent = () => (
-    <View style={styles.container}>
-      <Text>SEARCH</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.screenTitle}>SEARCH</Text>
     </View>
   );
 
@@ -21,12 +21,3 @@ const Search = () => {
 };
 
 export default Search;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: white,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
