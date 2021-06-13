@@ -18,29 +18,31 @@ Challenge proposed by firenze
 
 ### :triangular_flag_on_post: Getting started
 
-1. First, run npm install inside the folder named frontend.
+1. Firs, Clone the repository
 
 ```sh
-yarn
+git clone https://github.com/SousaVictorH/FirenzeChallenge
 ```
 
-2. After that, run npm start in the frontend and backend folders
+2. Second, run yarn
+
+```sh
+cd FirenzeChallenge && yarn
+```
+
+3. Run yarn start
 
 ```sh
 yarn start
 ```
 
-3. After that, run the app on Android or iOS
+4. After that, open another terminal and run the app on Android or iOS
 
 ```sh
 yarn run android
 ```
-or
-```sh
-yarn run ios
-```
 
-4. Then, you're ready to get started.
+5. Then, you're ready to get started.
 
 ## :computer: Contributing
 
